@@ -8,13 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		986DEC60229075A30033EBC0 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 986DEC5F229075A30033EBC0 /* main.c */; };
-		986DEC682290762A0033EBC0 /* point3d.c in Sources */ = {isa = PBXBuildFile; fileRef = 986DEC672290762A0033EBC0 /* point3d.c */; };
-		986DEC6B229076370033EBC0 /* segment3d.c in Sources */ = {isa = PBXBuildFile; fileRef = 986DEC6A229076370033EBC0 /* segment3d.c */; };
-		986DEC6E229076480033EBC0 /* vector3d.c in Sources */ = {isa = PBXBuildFile; fileRef = 986DEC6D229076480033EBC0 /* vector3d.c */; };
-		986DEC712290A01A0033EBC0 /* plane3d.c in Sources */ = {isa = PBXBuildFile; fileRef = 986DEC702290A01A0033EBC0 /* plane3d.c */; };
-		986DEC742290A10D0033EBC0 /* line3d.c in Sources */ = {isa = PBXBuildFile; fileRef = 986DEC732290A10D0033EBC0 /* line3d.c */; };
-		986DEC77229127900033EBC0 /* computeGeometry3d.c in Sources */ = {isa = PBXBuildFile; fileRef = 986DEC76229127900033EBC0 /* computeGeometry3d.c */; };
-		986DEC7A22916E290033EBC0 /* matrix.c in Sources */ = {isa = PBXBuildFile; fileRef = 986DEC7922916E290033EBC0 /* matrix.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,20 +25,6 @@
 /* Begin PBXFileReference section */
 		986DEC5C229075A30033EBC0 /* Geometry3D_02 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Geometry3D_02; sourceTree = BUILT_PRODUCTS_DIR; };
 		986DEC5F229075A30033EBC0 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		986DEC662290762A0033EBC0 /* point3d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = point3d.h; sourceTree = "<group>"; };
-		986DEC672290762A0033EBC0 /* point3d.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = point3d.c; sourceTree = "<group>"; };
-		986DEC69229076370033EBC0 /* segment3d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = segment3d.h; sourceTree = "<group>"; };
-		986DEC6A229076370033EBC0 /* segment3d.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = segment3d.c; sourceTree = "<group>"; };
-		986DEC6C229076480033EBC0 /* vector3d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vector3d.h; sourceTree = "<group>"; };
-		986DEC6D229076480033EBC0 /* vector3d.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = vector3d.c; sourceTree = "<group>"; };
-		986DEC6F2290A01A0033EBC0 /* plane3d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = plane3d.h; sourceTree = "<group>"; };
-		986DEC702290A01A0033EBC0 /* plane3d.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = plane3d.c; sourceTree = "<group>"; };
-		986DEC722290A10D0033EBC0 /* line3d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = line3d.h; sourceTree = "<group>"; };
-		986DEC732290A10D0033EBC0 /* line3d.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = line3d.c; sourceTree = "<group>"; };
-		986DEC75229127900033EBC0 /* computeGeometry3d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = computeGeometry3d.h; sourceTree = "<group>"; };
-		986DEC76229127900033EBC0 /* computeGeometry3d.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = computeGeometry3d.c; sourceTree = "<group>"; };
-		986DEC7822916E290033EBC0 /* matrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = matrix.h; sourceTree = "<group>"; };
-		986DEC7922916E290033EBC0 /* matrix.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = matrix.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,20 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				986DEC5F229075A30033EBC0 /* main.c */,
-				986DEC662290762A0033EBC0 /* point3d.h */,
-				986DEC672290762A0033EBC0 /* point3d.c */,
-				986DEC6F2290A01A0033EBC0 /* plane3d.h */,
-				986DEC702290A01A0033EBC0 /* plane3d.c */,
-				986DEC7822916E290033EBC0 /* matrix.h */,
-				986DEC7922916E290033EBC0 /* matrix.c */,
-				986DEC69229076370033EBC0 /* segment3d.h */,
-				986DEC75229127900033EBC0 /* computeGeometry3d.h */,
-				986DEC76229127900033EBC0 /* computeGeometry3d.c */,
-				986DEC722290A10D0033EBC0 /* line3d.h */,
-				986DEC732290A10D0033EBC0 /* line3d.c */,
-				986DEC6A229076370033EBC0 /* segment3d.c */,
-				986DEC6C229076480033EBC0 /* vector3d.h */,
-				986DEC6D229076480033EBC0 /* vector3d.c */,
 			);
 			path = Geometry3D_02;
 			sourceTree = "<group>";
@@ -154,13 +119,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				986DEC60229075A30033EBC0 /* main.c in Sources */,
-				986DEC6E229076480033EBC0 /* vector3d.c in Sources */,
-				986DEC712290A01A0033EBC0 /* plane3d.c in Sources */,
-				986DEC682290762A0033EBC0 /* point3d.c in Sources */,
-				986DEC77229127900033EBC0 /* computeGeometry3d.c in Sources */,
-				986DEC742290A10D0033EBC0 /* line3d.c in Sources */,
-				986DEC7A22916E290033EBC0 /* matrix.c in Sources */,
-				986DEC6B229076370033EBC0 /* segment3d.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
