@@ -1,0 +1,19 @@
+//
+//  computeGeometry3d.h
+//  Geometry3D_02
+//
+//  Created by Иван Милаев on 19/05/2019.
+//  Copyright © 2019 IvanMilaev. All rights reserved.
+//
+
+#ifndef computeGeometry3d_h
+#define computeGeometry3d_h
+
+#include <stdio.h>
+#include "point3d.h"
+#include "vector3d.h"
+#include "segment3d.h"
+#include "line3d.h"
+#include "plane3d.h"
+
+#endif /* computeGeometry3d_h */
