@@ -15,28 +15,15 @@
 #include "line3d.h"
 #include "matrix.h"
 
-typedef struct Plane3DThreePoints {
-    // p,q,r no-collinear
-    Point *p;
-    Point *q;
-    Point *r;
-} PlanePPP;
+typedef struct Plane3D {
+    // ax + by + cz + d = 0
+    float a, b, c, d;
+} Plane;
 
-typedef struct Plane3DLinePoint {
-    // p is not lies on line
-    LinePP *line;
-    Point *p;
-} PlaneLP;
 
-typedef struct Plane3DTwoIntersectLines {
-    // two intersected lines
-    LinePP *line0;
-    LinePP *line1;
-} PlaneLL;
-
-PlanePPP *planeByPoints(const Point *p, const Point *q, const Point *r);
-Vector *planeGetNormalVector( const PlanePPP *plane);
-bool isPointOnPlane(PlanePPP *plane, Point *p);
-void freePlanePPP(PlanePPP **plane);
+Plane *planeByPoints(const Point *p, const Point *q, const Point *r);
+Vector *planeGetNormalVector( const Plane *plane);
+bool isPointOnPlane(Plane *plane, Point *p);
+void freePlanePPP(Plane **plane);
 
 #endif /* plane3d_h */

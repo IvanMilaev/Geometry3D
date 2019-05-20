@@ -31,6 +31,8 @@ float vectorMultiplyDot(Vector *v, Vector *u);
 Vector *vectorMultiplyFloat(Vector *v, float f);
 Vector *vectorDivideFloat(Vector *v, float f);
 Vector *vectorMultiplyCross(Vector *v, Vector *u);
+Vector *vectorFromPoint(Point *p);
 Vector *vectorFromTwoPoints(Point *p, Point *q);
+float vectorLengthSquared(Vector *v);
 void removeVector(Vector **v);
 #endif /* vector3d_h */

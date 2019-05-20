@@ -24,6 +24,8 @@ float vectorLength(Vector *v)
     return sqrtf(powf(v->x, 2.0) + powf(v->y, 2.0) + powf(v->z, 2.0));
 }
 
+
+
 Vector *vectorAddVector(Vector *v, Vector *u)
 {
     Vector *vect = (Vector*) malloc(sizeof(Vector));
@@ -92,6 +94,15 @@ Vector *vectorMultiplyCross(Vector *v, Vector *u)
     return vect;
 }
 
+Vector *vectorFromPoint(Point *p)
+{
+    Vector *v = (Vector*) malloc(sizeof(Vector));
+    v->x = p->x;
+    v->y = p->y;
+    v->z = p->z;
+    return v;
+}
+
 Vector *vectorFromTwoPoints(Point *p, Point *q)
 {
     Vector *v = (Vector*) malloc(sizeof(Vector));
@@ -99,6 +110,11 @@ Vector *vectorFromTwoPoints(Point *p, Point *q)
     v->y = q->y - p->y;
     v->z = q->z - p->z;
     return v;
+}
+
+float vectorLengthSquared(Vector *v)
+{
+    return v->x * v->x + v->y * v->y + v->z * v->z;
 }
 
 void removeVector(Vector **v)

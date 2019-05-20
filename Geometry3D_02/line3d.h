@@ -14,19 +14,16 @@
 #include "vector3d.h"
 
 
-typedef struct Line3DTwoPoints {
-    // p != q
-    Point *p;
-    Point *q;
-} LinePP;
-
-typedef struct Line3DPointVector {
+typedef struct Line3D {
+    // x - x0/a = y - y0/b = z - z0/c  p - point p(x0,y0,z0)  directional vector v(a, b, c)
     Point *p;
     Vector *v;
-} LinePV;
+} Line;
 
 
-bool lineIsPointOnLine(LinePP *line, Point *p);
-LinePP *lineByPoints(const Point* p, const Point *q);
-void freeLinePP(LinePP **line);
+Line *lineByPoints(const Point *p, const Point *q);
+Line *lineByVectorPoint(const Vector *v, const Point *p);
+Vector *lineGetDirectionalVector(Line *line);
+bool lineIsPointOnLine(Line *line, Point *p);
+void freeLine(Line **line);
 #endif /* line3d_h */

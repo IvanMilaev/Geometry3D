@@ -8,34 +8,37 @@
 
 #include "plane3d.h"
 
-PlanePPP *planeByPoints(const Point *p, const Point *q, const Point *r)
+Plane *planeByPoints(const Point *p, const Point *q, const Point *r)
 {
-    PlanePPP *tmp = (PlanePPP*) malloc(sizeof(PlanePPP));
-    tmp->p = (Point*) malloc(sizeof(Point));
-    tmp->q = (Point*) malloc(sizeof(Point));
-    tmp->r = (Point*) malloc(sizeof(Point));
-    *(tmp->p) = *p;
-    *(tmp->q) = *q;
-    *(tmp->r) = *r;
-    return tmp;
+    Plane *plane = (Plane*) malloc(sizeof(Plane));
+    
+    // find normal vector of plane 𝑛⃗ = v1 x v2,  v1 v2 - directional vector of two lines from three points
+    // Set the first point p as M(x0,y0,z0);
+    Line *l1 = lineByPoints(p, q);
+    Line *l2 = lineByPoints(p, r);
+    Vector *v1 = lineGetDirectionalVector(l1);
+    Vector *v2 = lineGetDirectionalVector(l2);
+    Vector *n = vectorMultiplyCross(v1, v2);
+    
+    // equation of plane => n * (x-x0, y-y0, z-z0) = 0  -->  ax + by + cz + d = 0
+    plane->a = n->x;
+    plane->b = n->y;
+    plane->c = n->z;
+    plane->d = -1.0 * (n->x * p->x + n->y * p->y + n->z * p->z);
+    return plane;
 }
 
-Vector *planeGetNormalVector( const PlanePPP *plane)
+Vector *planeGetNormalVector( const Plane *plane)
 {
-    // normal vector = cross(v1,v2) where v1 v2 - vectors from three points of plane
-    Vector *v1 = (Vector*) malloc(sizeof(Vector));
-    Vector *v2 = (Vector*) malloc(sizeof(Vector));
+    Vector *n = (Vector*) malloc(sizeof(Vector));
+    n->x = plane->a;
+    n->y = plane->b;
+    n->z = plane->c;
     
-    v1 = vectorFromTwoPoints(plane->q, plane->p);
-    v2 = vectorFromTwoPoints(plane->r, plane->q);
-    
-    return vectorMultiplyCross(v1, v2);
+    return n;
 }
 
-void freePlanePPP(PlanePPP **plane) {
-    free((*plane)->p);
-    free((*plane)->q);
-    free((*plane)->r);
+void freePlane(Plane **plane) {
     free(*plane);
     *plane = NULL;
 }

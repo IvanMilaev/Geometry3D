@@ -16,4 +16,13 @@
 #include "line3d.h"
 #include "plane3d.h"
 
+
+enum PointOrientation {
+    COUNTERCLOCKWISE,
+    CLOCKWISE,
+    OOPS
+};
+
+int orientationOfThreePoints(Point *p, Point *q, Point *r);
+Line *intersectTwoPlanes(Plane *plane1, Plane *plane2);
 #endif /* computeGeometry3d_h */

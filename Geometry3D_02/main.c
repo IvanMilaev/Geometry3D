@@ -10,32 +10,29 @@
 #include <stdlib.h>
 #include "segment3d.h"
 #include "plane3d.h"
+#include "computeGeometry3d.h"
 
 int main(int argc, const char * argv[]) {
     
     Point *p =(Point*) malloc(sizeof(Point));
     Point *q =(Point*) malloc(sizeof(Point));
     Point *r =(Point*) malloc(sizeof(Point));
-    LinePP *line = NULL;
-    PlanePPP *plane = NULL;
-    Vector *n = NULL;
-    p->x = 11.0;
-    p->y = - 3.0;
-    p->z = 6.0;
+    Plane *plane = NULL;
     
-    q->x = 2.0;
-    q->y = - 4.0;
-    q->z = 6.5;
+    p->x = 2.0;
+    p->y = 9.0;
+    p->z = 7.0;
     
-    line = lineByPoints(p, q);
+    q->x = 5.0;
+    q->y = - 6.0;
+    q->z = 32;
     
-    r->x = 56.0;
-    r->y = - 1.0;
-    r->z = 2.9;
+    r->x = 2.0;
+    r->y = - 3.0;
+    r->z = 6.0;
     
     plane = planeByPoints(p, q, r);
-    n = planeGetNormalVector(plane);
-    //bool is_on_line = lineIsPointOnLine(line, r);
-    printf("Hello, World! %f %f %f\n", n->x, n->y, n->z);
+    
+    printf("Hello, World! %f \n", plane->d);
     return 0;
 }
