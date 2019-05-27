@@ -72,11 +72,51 @@ int orientationOfThreePoints(Point *p, Point *q, Point *r)
 
 }
 
+Point *intersectPlaneAndLine(Plane *plane, Line *line)
+{
+    Point *intersect_point = NULL;
+    
+    Vector *linePoint = createVector(line->p->x, line->p->y, line->p->z);
+    
+    Point *somePlanePoint = planeGetSomePointOfPlane(plane);
+    
+    Vector *planePoint = createVector(somePlanePoint->x, somePlanePoint->y, somePlanePoint->z);
+    /*
+     vector diff = subVectors(linePoint,planePoint);
+     
+     return addVectors(addVectors(diff,planePoint),scaleVector(-dotProduct(diff,planeNormal)/dotProduct(lineVector,planeNormal),lineVector));
+     */
+    
+    Vector *diff = vectorSubstractVector(linePoint, planePoint);
+    Vector *planeNormal = planeGetNormalVector(plane);
+    float d = vectorMultiplyDot(line->v, planeNormal);
+    
+    if (fabsf(d)>= FLT_EPSILON)
+    {
+        
+        Vector *intersect_vector = vectorAddVector(vectorAddVector(diff, planePoint),
+                                                   vectorMultiplyFloat(line->v,-vectorMultiplyDot(diff,planeNormal)/d));
+        
+        intersect_point = createPoint(intersect_vector->x, intersect_vector->y, intersect_vector->z);
+        freePoint(&somePlanePoint);
+        freeVector(&linePoint);
+        freeVector(&diff);
+        freeVector(&planeNormal);
+    }
+    else // if d=0 plane and line parralel, or line fully lies on plane
+    {
+        // check is  line's point lies on plane?
+        if (isPointOnPlane(plane, line->p)) intersect_point = createPoint(INFINITY, INFINITY, INFINITY);
+        else intersect_point = createPoint(INFINITY, -INFINITY, 0);
+    }
+    
+    return intersect_point;
+}
 
 Line *intersectTwoPlanes(Plane *plane1, Plane *plane2)
 {
     Line *intersect_line = NULL;
-    
+    // TODO: check if planes parallels or mutch up
     /*
      https://stackoverflow.com/questions/6408670/line-of-intersection-between-two-planes/18092154#18092154
      // Intersection of 2-planes: a variation based on the 3-plane version.
@@ -121,19 +161,11 @@ Line *intersectTwoPlanes(Plane *plane1, Plane *plane2)
     
     if(fabsf(det) >= FLT_EPSILON)
     {
-        Vector *v1 = vectorMultiplyCross(d,n1);
-        v1 = vectorMultiplyFloat(v1, plane1->d);
-        v1 = vectorDivideFloat(v1, det);
-        
-        Vector *v2 = vectorMultiplyCross(n1,d);
-        v2 = vectorMultiplyFloat(v2, plane2->d);
-        v2 = vectorDivideFloat(v2, det);
-        
-        Vector *vpoint = vectorAddVector(v1,v2);
-        Point *point = (Point*) malloc(sizeof(Point));
-        point->x = vpoint->x;
-        point->y = vpoint->y;
-        point->z = vpoint->z;
+
+        Vector *vpoint = vectorAddVector(vectorMultiplyFloat(vectorMultiplyCross(d,n2), plane1->d),
+                                         vectorMultiplyFloat(vectorMultiplyCross(d,n1), plane2->d));
+        vpoint = vectorDivideFloat(vpoint, det);
+        Point *point = createPoint(vpoint->x, vpoint->y, vpoint->z);
         
         intersect_line = lineByVectorPoint(d,point);
     }

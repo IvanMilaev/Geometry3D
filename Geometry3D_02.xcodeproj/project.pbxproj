@@ -15,6 +15,8 @@
 		986DEC742290A10D0033EBC0 /* line3d.c in Sources */ = {isa = PBXBuildFile; fileRef = 986DEC732290A10D0033EBC0 /* line3d.c */; };
 		986DEC77229127900033EBC0 /* computeGeometry3d.c in Sources */ = {isa = PBXBuildFile; fileRef = 986DEC76229127900033EBC0 /* computeGeometry3d.c */; };
 		986DEC7A22916E290033EBC0 /* matrix.c in Sources */ = {isa = PBXBuildFile; fileRef = 986DEC7922916E290033EBC0 /* matrix.c */; };
+		98BD9A53229461A00003662A /* triangle3D.c in Sources */ = {isa = PBXBuildFile; fileRef = 98BD9A52229461A00003662A /* triangle3D.c */; };
+		98BD9A5622946A310003662A /* pyramid3d.c in Sources */ = {isa = PBXBuildFile; fileRef = 98BD9A5522946A310003662A /* pyramid3d.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +48,10 @@
 		986DEC76229127900033EBC0 /* computeGeometry3d.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = computeGeometry3d.c; sourceTree = "<group>"; };
 		986DEC7822916E290033EBC0 /* matrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = matrix.h; sourceTree = "<group>"; };
 		986DEC7922916E290033EBC0 /* matrix.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = matrix.c; sourceTree = "<group>"; };
+		98BD9A51229461A00003662A /* triangle3D.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = triangle3D.h; sourceTree = "<group>"; };
+		98BD9A52229461A00003662A /* triangle3D.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = triangle3D.c; sourceTree = "<group>"; };
+		98BD9A5422946A310003662A /* pyramid3d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pyramid3d.h; sourceTree = "<group>"; };
+		98BD9A5522946A310003662A /* pyramid3d.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = pyramid3d.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,10 @@
 				986DEC69229076370033EBC0 /* segment3d.h */,
 				986DEC75229127900033EBC0 /* computeGeometry3d.h */,
 				986DEC76229127900033EBC0 /* computeGeometry3d.c */,
+				98BD9A51229461A00003662A /* triangle3D.h */,
+				98BD9A52229461A00003662A /* triangle3D.c */,
+				98BD9A5422946A310003662A /* pyramid3d.h */,
+				98BD9A5522946A310003662A /* pyramid3d.c */,
 				986DEC722290A10D0033EBC0 /* line3d.h */,
 				986DEC732290A10D0033EBC0 /* line3d.c */,
 				986DEC6A229076370033EBC0 /* segment3d.c */,
@@ -160,7 +170,9 @@
 				986DEC77229127900033EBC0 /* computeGeometry3d.c in Sources */,
 				986DEC742290A10D0033EBC0 /* line3d.c in Sources */,
 				986DEC7A22916E290033EBC0 /* matrix.c in Sources */,
+				98BD9A5622946A310003662A /* pyramid3d.c in Sources */,
 				986DEC6B229076370033EBC0 /* segment3d.c in Sources */,
+				98BD9A53229461A00003662A /* triangle3D.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

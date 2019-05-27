@@ -22,7 +22,9 @@ typedef struct Plane3D {
 
 
 Plane *planeByPoints(const Point *p, const Point *q, const Point *r);
+Plane *planeByCoeficients(const float a, const float b, const float c, const float d);
 Vector *planeGetNormalVector( const Plane *plane);
+Point *planeGetSomePointOfPlane(Plane *plane);
 bool isPointOnPlane(Plane *plane, Point *p);
 void freePlanePPP(Plane **plane);
 

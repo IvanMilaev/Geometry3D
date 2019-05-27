@@ -26,7 +26,7 @@ Segment *segmentByCoords(float x0, float y0, float z0, float x1, float y1, float
 Segment *segmentByPoints(const Point *p, const Point *q);
 float segmentLength(Segment *segment);
 bool segmentOnSegment( Point *p, Point *q, Point *r);
-void removeSegment(Segment **segment);
+void freeSegment(Segment **segment);
 
 
 

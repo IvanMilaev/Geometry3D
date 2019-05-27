@@ -10,46 +10,27 @@
 
 Line *lineByPoints(const Point *p, const Point *q) {
     
-    Line *line = (Line*) malloc(sizeof(Line));
-    line->p = (Point*) malloc(sizeof(Point));
-    line->v = (Vector*) malloc(sizeof(Vector));
-    
     // x - x0/a = y - y0/b = z - z0/c  p - point p(x0,y0,z0)  directional vector v(a, b, c)
-    line->p->x = p->x;
-    line->p->y = p->y;
-    line->p->z = p->z;
-    
-    line->v->x = q->x - p->x;
-    line->v->y = q->y - p->y;
-    line->v->z = q->z - p->z;
+    Line *line = (Line*) malloc(sizeof(Line));
+    line->p = createPoint(p->x, p->y, p->z);
+    line->v = createVector(q->x - p->x, q->y - p->y, q->z - p->z);
 
     return line;
 }
 
 Line *lineByVectorPoint(const Vector *v, const Point *p) {
     Line *line = (Line*) malloc(sizeof(Line));
-    line->p = (Point*) malloc(sizeof(Point));
-    line->v = (Vector*) malloc(sizeof(Vector));
-    
-    line->p->x = p->x;
-    line->p->y = p->y;
-    line->p->z = p->z;
-    
-    line->v->x = v->x;
-    line->v->y = v->y;
-    line->v->z = v->z;
+    line->p = createPoint(p->x, p->y, p->z);
+    line->v = createVector(v->x, v->y, v->z);
+
     
     return line;
 }
 
 Vector *lineGetDirectionalVector(Line *line)
 {
-    Vector *d = (Vector*) malloc(sizeof(Vector));
-    d->x = line->v->x;
-    d->y = line->v->y;
-    d->z = line->v->z;
+    return line->v;
     
-    return d;
 }
 bool lineIsPointOnLine(Line *line, Point *p)
 {
@@ -86,6 +67,7 @@ bool lineIsPointOnLine(Line *line, Point *p)
 }
 
 void freeLine(Line **line) {
-    free(*line);
+    free((*line)->p);
+    free((*line)->v);
     *line = NULL;
 }

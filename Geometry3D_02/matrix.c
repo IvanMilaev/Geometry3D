@@ -7,7 +7,7 @@
 //
 
 #include "matrix.h"
-float mat3_determinant(mat3 *m)
+float mat3_det(mat3 *m)
 {
     float determinant =
       m->m11 * m->m22 * m->m33

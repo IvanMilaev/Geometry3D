@@ -33,9 +33,14 @@ Segment *segmentByPoints(const Point *p, const Point *q) {
     return segm;
 }
 
+float segmentLength(Segment *segment)
+{
+    return sqrtf(powf(segment->p->x - segment->q->x, 2.0)
+                 + powf(segment->p->y - segment->q->y, 2.0)
+                 + powf(segment->p->z - segment->q->z, 2.0));
+}
 
-
-void removeSegment(Segment **segment)
+void freeSegment(Segment **segment)
 {
     free((*segment)->p);
     free((*segment)->q);

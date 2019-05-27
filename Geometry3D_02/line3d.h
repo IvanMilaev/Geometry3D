@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "point3d.h"
+#include <math.h>
 #include "vector3d.h"
 
 

@@ -7,7 +7,17 @@
 //
 
 #include "vector3d.h"
-#include <math.h>
+
+
+Vector *createVector(float x, float y, float z)
+{
+    Point *vector = (Point*) malloc(sizeof(Point));
+    vector->x = x;
+    vector->y = y;
+    vector->z = z;
+    
+    return vector;
+}
 
 bool vector3D_is_zero(Vector *v)
 {
@@ -117,7 +127,7 @@ float vectorLengthSquared(Vector *v)
     return v->x * v->x + v->y * v->y + v->z * v->z;
 }
 
-void removeVector(Vector **v)
+void freeVector(Vector **v)
 {
     free(*v);
     *v = NULL;

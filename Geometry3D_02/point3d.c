@@ -8,4 +8,17 @@
 
 #include "point3d.h"
 
+Point *createPoint(float x, float y, float z)
+{
+    Point *point = (Point*) malloc(sizeof(Point));
+    point->x = x;
+    point->y = y;
+    point->z = z;
+    
+    return point;
+}
 
+void freePoint(Point **point) {
+    free(*point);
+    *point = NULL;
+}

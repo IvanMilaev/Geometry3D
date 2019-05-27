@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <float.h>
+#include <math.h>
 #include "point3d.h"
 
 typedef struct Vector3D {
@@ -20,6 +21,7 @@ typedef struct Vector3D {
 } Vector;
 
 
+Vector *createVector(float x, float y, float z);
 bool vectorIsZero(Vector *v);
 bool vectorIsEqual(Vector *v, Vector *u);
 float vectorLength(Vector *v);
@@ -34,5 +36,5 @@ Vector *vectorMultiplyCross(Vector *v, Vector *u);
 Vector *vectorFromPoint(Point *p);
 Vector *vectorFromTwoPoints(Point *p, Point *q);
 float vectorLengthSquared(Vector *v);
-void removeVector(Vector **v);
+void freeVector(Vector **v);
 #endif /* vector3d_h */

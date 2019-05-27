@@ -23,6 +23,6 @@ typedef struct Matrix3x3 {
     float m33;
 } mat3;
 
-float mat3_determinant(mat3 *m);
+float mat3_det(mat3 *m);
 
 #endif /* matrix_h */
